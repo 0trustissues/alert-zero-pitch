@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AlertZero</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  h1{font-size:44px;letter-spacing:-1.6px;color:var(--pink)}
+  .sub{font-size:17px;margin-top:6px}
+
+  .dg{position:absolute;left:72px;top:176px;width:1136px;z-index:2}
+  .rv{opacity:0;animation:rv .45s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rv{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+
+  .soc{height:42px;background:#EEF1F6;border:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 16px}
+  .soc svg{width:44px;height:26px;flex:none}
+  .soc b.t{font:600 17px var(--sans);letter-spacing:-.4px;color:var(--ink)}
+  .soc span.x{font-size:12.5px;color:var(--char)} .soc span.x b{color:var(--ink);font-weight:600}
+  .soc .pl{margin-left:auto;font:600 9px var(--mono);letter-spacing:.16em;color:var(--blue);border:1px solid var(--blue);border-radius:10px;padding:3px 10px}
+
+  .pd{height:20px;display:flex;justify-content:center;gap:22px;align-items:center;font:600 9px var(--mono);letter-spacing:.16em}
+  .pd .p{color:#C06A12} .pd .d{color:var(--blue)}
+
+  .fr{position:relative;border:1px solid var(--slate);padding:10px 10px 8px}
+  .fr .pill{position:absolute;left:14px;top:-9px;background:#fff;border:1px solid var(--slate);border-radius:10px;padding:2px 10px;font:600 9px var(--mono);letter-spacing:.16em;color:var(--grey)}
+
+  .band{height:116px;background:var(--blue);padding:8px 10px 10px}
+  .band .hd{display:flex;align-items:baseline;gap:8px;height:28px;color:#fff}
+  .band .hd b{font:600 20px var(--sans);letter-spacing:-.6px}
+  .band .hd span{font-size:11.5px;color:#CFE0FA}
+  .band .hd em{margin-left:auto;font:600 9px var(--mono);letter-spacing:.14em;font-style:normal;color:#CFE0FA}
+  .ws{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:2px}
+  .w{background:#fff;height:68px;padding:12px 16px 0;border-top:3px solid var(--tc)}
+  .w h4{font:600 17px var(--sans);letter-spacing:-.5px;color:var(--blue)}
+  .w p{margin-top:5px;font-size:11.5px;color:var(--char)}
+  .w.f{border-top:3px dashed var(--pink)} .w.f h4{color:var(--pink)}
+
+  .cx{position:relative;height:28px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+  .cx .cl{position:relative;display:flex;justify-content:center}
+  .ln{width:2px;height:100%;background:var(--ink);position:relative;opacity:0;transform-origin:top;animation:lg .4s ease both}
+  .cl.up .ln{transform-origin:bottom}
+  @keyframes lg{from{opacity:1;transform:scaleY(0)}to{opacity:1;transform:none}}
+  .lab{position:absolute;top:6px;font:600 9px var(--mono);letter-spacing:.16em}
+  .lab.l{left:2px;color:var(--blue)} .lab.r{right:2px;color:var(--pink)}
+  .cx.lo{height:16px}
+
+  .cs{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+  .c{height:92px;background:#fff;border:1.5px solid var(--blue);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 8px}
+  .c.k{border-color:var(--pink)}
+  .c b{font:600 14px/1.1 var(--sans);letter-spacing:-.4px;color:var(--ink)}
+  .c span{margin-top:6px;font-size:10.5px;line-height:1.3;color:var(--char)}
+
+  .es{height:104px;background:#0B1F63;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2fr) minmax(0,1fr);gap:14px;padding:12px;color:#fff}
+  .es .m b{display:block;font:600 22px var(--sans);letter-spacing:-.8px;margin-top:12px}
+  .es .m p{margin-top:8px;font-size:11px;line-height:1.35;color:#C9D6F5}
+  .es .bx{background:#17306F;border:1px solid #2C4A94;padding:12px 16px}
+  .es .bx h5{font:600 17px var(--sans);letter-spacing:-.5px;display:flex;align-items:baseline;gap:10px}
+  .es .bx h5 i{font:500 8.5px var(--mono);font-style:normal;letter-spacing:.14em;color:#9DB4E8}
+  .es .bx p{margin-top:8px;font-size:11.5px;line-height:1.4;color:#D9E4FA}
+
+  .tg{position:absolute;left:0;right:0;top:622px;text-align:center;font:600 26px var(--sans);letter-spacing:-.8px;color:var(--ink);z-index:2}
+</style>
+</head>
+<body data-foot="Platform · AlertZero">
+<div class="z">
+  <div class="eyebrow in1">Platform · <b>Architecture</b></div>
+  <h1 class="in2">AlertZero</h1>
+  <p class="sub in3">The agentic layer, on everything Elastic Security already is</p>
+</div>
+
+<div class="dg" id="dg">
+  <div class="soc rv">
+    <svg viewBox="0 0 44 26"><g fill="#1D1E24"><circle cx="8" cy="8" r="5.5"/><path d="M0 24c0-7 3.5-10 8-10s8 3 8 10z"/><circle cx="22" cy="8" r="5.5"/><path d="M14 24c0-7 3.5-10 8-10s8 3 8 10z"/><circle cx="36" cy="8" r="5.5"/><path d="M28 24c0-7 3.5-10 8-10s8 3 8 10z"/></g></svg>
+    <b class="t">Your SOC team</b>
+    <span class="x">Every finding is an <b>evidence-backed Proposal</b>. You approve or reject. You set how far each Watch goes.</span>
+    <span class="pl">DECIDES</span>
+  </div>
+  <div class="pd rv"><span class="p">↑ PROPOSALS</span><span class="d">DECISIONS ↓</span></div>
+
+  <div class="fr">
+    <span class="pill">ELASTIC SECURITY</span>
+    <div class="band rv">
+      <div class="hd"><b>AlertZero</b><span>· the agentic layer of Elastic Security</span><em>CONFIGURED HERE</em></div>
+      <div class="ws">
+        <div class="w rv" style="--tc:var(--teal)"><h4>Triage Watch</h4><p>Every alert, before you see it</p></div>
+        <div class="w rv" style="--tc:var(--orange)"><h4>Hunt Watch</h4><p>Hunting that never sleeps</p></div>
+        <div class="w rv" style="--tc:var(--teal-d)"><h4>Detection Watch</h4><p>Fix the rule, not the symptom</p></div>
+        <div class="w f rv"><h4>Forensics Watch</h4><p>Specialist depth when needed</p></div>
+      </div>
+    </div>
+
+    <div class="cx" id="cx1">
+      <span class="lab l">↓ DIRECTS</span><span class="lab r">POWERS ↑</span>
+    </div>
+
+    <div class="cs">
+      <div class="c rv"><b>Detection Engine</b><span>Rules and ML</span></div>
+      <div class="c rv"><b>Attack Discovery</b><span>Alerts into attack chains</span></div>
+      <div class="c rv"><b>Entity Analytics</b><span>UEBA and risk scoring</span></div>
+      <div class="c k rv"><b>Elastic Defend</b><span>Endpoint prevention and response</span></div>
+      <div class="c rv"><b>Elastic Workflows</b><span>Durable, reliable execution</span></div>
+      <div class="c rv"><b>Agent Builder</b><span>Agents, skills, reasoning traces</span></div>
+      <div class="c rv"><b>Inference Service</b><span>Elastic-hosted and your own models</span></div>
+    </div>
+
+    <div class="cx lo" id="cx2"></div>
+
+    <div class="es rv">
+      <div class="m rv"><b>Elasticsearch</b><p>All your data, at retention. Every verdict is a query you can re-run.</p></div>
+      <div class="bx rv"><h5>ES|QL <i>ONE LANGUAGE · CCS · CPS · FEDERATED</i></h5><p>One query across clusters, projects and external federated sources. The data stays where it lives.</p></div>
+      <div class="bx rv"><h5>Context Engine</h5><p>Remembers what the Watches learned and what you decided</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="tg rv" id="tg">Built in, <span class="b">not bolted on.</span></div>
+
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){
+  // seven connector cells per row: left side directs downward, right side powers upward
+  [['cx1', 7], ['cx2', 7]].forEach(([id, n]) => {
+    const row = document.getElementById(id);
+    for (let i = 0; i < n; i++){
+      const cl = document.createElement('div'); cl.className = 'cl' + (i >= 4 ? ' up' : '') ;
+      cl.innerHTML = '<div class="rv-l"></div>'; row.appendChild(cl);
+    }
+  });
+
+  // the graphic loads in two sweeps at once: the left half top to bottom, the right half bottom to top
+  const dg = document.getElementById('dg'), R = dg.getBoundingClientRect();
+  const BASE = .2, SPAN = 1.0;
+  document.querySelectorAll('.rv, .rv-l').forEach(el => {
+    const r = (el.classList.contains('rv-l') ? el.parentElement : el).getBoundingClientRect();
+    const xn = (r.left + r.width / 2 - R.left) / R.width, yn = (r.top + r.height / 2 - R.top) / R.height;
+    const k = xn < .5 ? yn : 1 - yn;
+    el.style.animationDelay = (BASE + Math.max(0, Math.min(1, k)) * SPAN).toFixed(2) + 's';
+    if (el.classList.contains('rv-l')) el.classList.add('ln');
+  });
+  document.getElementById('tg').style.animationDelay = '1.3s';
+})();
+</script>
+</body>
+</html>

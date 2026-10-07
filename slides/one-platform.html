@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>One platform</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  h1{font-size:42px;letter-spacing:-1.5px;max-width:1136px}
+  .sub{font-size:17px;margin-top:8px;max-width:1000px}
+
+  .dg{position:absolute;left:72px;right:72px;top:196px;z-index:2}
+  .row{display:flex;align-items:stretch;height:330px}
+  .pn{flex:1;min-width:0;position:relative;background:#fff;border:1px solid var(--slate);padding:34px 18px 14px;display:flex;flex-direction:column}
+  .pn h3{font:600 22px/1.1 var(--sans);letter-spacing:-.8px;color:var(--ink)}
+  .pn .d{margin-top:6px;font-size:11.5px;line-height:1.35;color:var(--char)}
+  .pn .lbl{margin-top:9px;font:500 9.5px var(--mono);letter-spacing:.14em;color:var(--grey)}
+  .pill{position:absolute;left:14px;top:-9px;background:#fff;padding:2px 10px;border:1px solid currentColor;border-radius:10px;font:600 9.5px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+  .pn.s{border-top:2px solid var(--blue)} .s .pill{color:var(--blue)}
+  .pn.e{border:2px solid var(--teal-d);box-shadow:0 0 0 4px rgba(72,239,207,.22),0 0 26px rgba(72,239,207,.4)} .e .pill{color:var(--teal-d)} .e h3{color:var(--teal-d)}
+  .pn.a{border-top:2px solid #D9822B} .a .pill{color:#C06A12}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+  .it{background:#EEF1F6;border:1px solid var(--line);padding:4px 7px;font:500 11.5px/1.25 var(--sans);color:var(--ink);opacity:0;animation:pop .4s cubic-bezier(.2,.8,.2,1) both}
+  .col .it{display:block;margin-top:7px}
+  .col{margin-top:8px}
+  .s .it b{color:var(--blue);font-weight:600}
+  .a .it b{color:#C06A12;font-weight:600}
+  .foot{margin-top:auto;font-size:11px;color:var(--grey)}
+  @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:none}}
+
+  /* panels drop in; the connector to the bar grows after */
+  .pn{animation:drop .6s cubic-bezier(.2,.9,.25,1.05) both}
+  .pn.s{animation-delay:.2s} .pn.e{animation-delay:.35s} .pn.a{animation-delay:.5s}
+  @keyframes drop{from{opacity:0;transform:translateY(-24px)}to{opacity:1;transform:none}}
+  .pn::after{content:"";position:absolute;left:50%;top:100%;width:3px;margin-left:-1px;height:22px;background:var(--blue);transform-origin:top;animation:grow .4s ease 1.2s both}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:none}}
+
+  /* arrows between panels, with a pink signal that keeps travelling */
+  .ar{width:44px;flex:none;position:relative;align-self:center;height:12px;opacity:0;animation:fade .4s ease 1s both}
+  .ar::before{content:"";position:absolute;left:4px;right:6px;top:5px;height:1.5px;background:var(--ink)}
+  .ar::after{content:"";position:absolute;right:3px;top:2px;border:4px solid transparent;border-left:7px solid var(--ink);border-right:0}
+  .ar i{position:absolute;left:4px;top:2px;width:8px;height:8px;border-radius:50%;background:var(--pink);animation:flow 2s ease-in-out 1.6s infinite}
+  .ar.two i{animation-delay:2.4s}
+  @keyframes flow{0%{transform:translateX(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(26px);opacity:0}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+
+  .bar{position:relative;margin-top:22px;height:44px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;gap:14px;overflow:hidden;transform-origin:left;animation:wide .7s cubic-bezier(.2,.8,.2,1) 1s both}
+  .bar b{font:600 21px var(--sans);letter-spacing:-.6px}
+  .bar span{font-size:14px}
+  .bar::after{content:"";position:absolute;top:0;bottom:0;width:120px;left:-140px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);animation:shim 4.5s ease-in-out 2s infinite}
+  @keyframes wide{from{transform:scaleX(.05);opacity:0}to{transform:none;opacity:1}}
+  @keyframes shim{0%{left:-140px}45%,100%{left:100%}}
+
+  .tag2{margin-top:20px;text-align:center;font:600 24px var(--sans);letter-spacing:-.7px;color:var(--ink)}
+</style>
+</head>
+<body data-foot="Platform · One platform">
+<div class="z">
+  <div class="eyebrow in1">Platform · <b>One platform</b></div>
+  <h1 class="in2">One platform. <span class="b">Elastic Security is built on all of it.</span></h1>
+  <p class="sub in3">SIEM, endpoint security, and native automation, all on the Elasticsearch you know and love.</p>
+</div>
+
+<div class="dg">
+  <div class="row">
+    <div class="pn s">
+      <span class="pill">SIEM</span>
+      <h3>SIEM, all your data</h3>
+      <p class="d">Every security signal in one place, at retention.</p>
+      <div class="col">
+        <span class="it">Logs, endpoint, cloud, identity, <b>one place</b></span>
+        <span class="it"><b>ES|QL</b> asks precisely, shows its work</span>
+        <span class="it"><b>Detection rules</b>, open on GitHub</span>
+        <span class="it"><b>Entity analytics</b>: one record per person, risk scored</span>
+        <span class="it"><b>Attack Discovery</b>: alerts in, attacks out</span>
+        <span class="it"><b>Automatic Migration</b> from Splunk, QRadar, Sentinel</span>
+      </div>
+    </div>
+    <div class="ar"><i></i></div>
+    <div class="pn e">
+      <span class="pill">Endpoint security</span>
+      <h3>Elastic Defend</h3>
+      <p class="d">Our own agent on the endpoint. Prevention and response on the host, the same agent that ships the data.</p>
+      <div class="lbl">PREVENTS</div>
+      <div class="chips">
+        <span class="it">Malware</span><span class="it">Ransomware</span><span class="it">Memory threats</span>
+        <span class="it">Malicious behaviour</span><span class="it">Vulnerable drivers blocked</span>
+      </div>
+      <div class="lbl">RESPONDS</div>
+      <div class="chips">
+        <span class="it">Isolate host</span><span class="it">Kill process</span><span class="it">Get file</span><span class="it">Run script</span>
+        <span class="it">Cloud workload protection</span>
+      </div>
+    </div>
+    <div class="ar two"><i></i></div>
+    <div class="pn a">
+      <span class="pill">Native automation</span>
+      <h3>Workflows and agents, built in</h3>
+      <p class="d">No separate SOAR to buy.</p>
+      <div class="col">
+        <span class="it"><b>Elastic Workflows</b>: durable, versioned, human gates</span>
+        <span class="it"><b>Agent Builder</b> + security skills</span>
+        <span class="it"><b>Automatic Import</b> builds the integration from a sample log</span>
+        <span class="it"><b>Elastic Inference Service</b>: Elastic-hosted models</span>
+      </div>
+      <div class="foot">Model-agnostic. Bring your own model.</div>
+    </div>
+  </div>
+  <div class="bar"><b>Elasticsearch.</b><span>One database. ES|QL, agents and workflows underneath.</span></div>
+  <div class="tag2 in6">Every agent you will meet today <span class="b">stands on this platform.</span></div>
+</div>
+
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.pn').forEach((p, pi) => {
+    p.querySelectorAll('.it').forEach((e, i) => { e.style.animationDelay = (.65 + pi * .12 + i * .06) + 's'; });
+  });
+})();
+</script>
+</body>
+</html>

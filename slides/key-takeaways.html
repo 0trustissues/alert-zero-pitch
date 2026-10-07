@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Key takeaways</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  h1{font-size:52px;letter-spacing:-1.8px}
+
+  .rows{position:absolute;left:72px;top:166px;width:1136px;display:flex;flex-direction:column;gap:14px;z-index:2}
+  .r{position:relative;height:112px;display:grid;grid-template-columns:104px minmax(0,1fr);align-items:center;background:#fff;border:1px solid var(--line);opacity:0;animation:slide .6s cubic-bezier(.2,.85,.25,1) both}
+  .r:nth-child(1){--a:var(--blue);animation-delay:.3s} .r:nth-child(2){--a:var(--teal-d);animation-delay:.55s} .r:nth-child(3){--a:var(--pink);animation-delay:.8s}
+  @keyframes slide{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+  .r::before{content:"";position:absolute;left:-1px;top:-1px;bottom:-1px;width:6px;background:var(--a);transform-origin:top;animation:bar .5s ease both;animation-delay:inherit}
+  @keyframes bar{from{transform:scaleY(0)}to{transform:none}}
+  .n{padding-left:26px;font:600 52px/1 var(--sans);letter-spacing:-2px;color:var(--a)}
+  .t{padding-right:30px}
+  .t h3{font:600 22px var(--sans);letter-spacing:-.7px;color:var(--ink)}
+  .t p{margin-top:7px;font-size:15px;line-height:1.42;color:var(--char)}
+
+  .cl{position:absolute;left:72px;top:556px;width:1128px;height:92px;background:var(--blue);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);display:flex;align-items:center;padding:0 34px;z-index:2;opacity:0;animation:rise .7s cubic-bezier(.2,.9,.25,1.05) 1.25s both}
+  .cl p{font-size:18px;line-height:1.4;color:#fff}
+  .cl b{color:var(--teal);font-weight:600}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body data-foot="AlertZero · Key takeaways">
+<div class="z">
+  <div class="eyebrow in1">Before you go</div>
+  <h1 class="in2">Key <span class="b">takeaways</span></h1>
+</div>
+
+<div class="rows">
+  <div class="r">
+    <div class="n">01</div>
+    <div class="t"><h3>The SOC hits bottlenecks everywhere.</h3><p>We covered two of them: blocking known threats at the endpoint, and hunting the unknown that never trips an alert. Both run on one platform, part of a bigger picture.</p></div>
+  </div>
+  <div class="r">
+    <div class="n">02</div>
+    <div class="t"><h3>Prevention cuts the alert load at the source.</h3><p>Every threat stopped before it executes is one fewer alert to chase and one fewer investigation to open.</p></div>
+  </div>
+  <div class="r">
+    <div class="n">03</div>
+    <div class="t"><h3>Continuous hunting finds what prevention doesn't.</h3><p>It runs continuously on your data and surfaces a finding only on a real hit. You see the query it ran and the evidence behind it, and you approve every action before anything ships.</p></div>
+  </div>
+</div>
+
+<div class="cl"><p>This is <b>AlertZero</b>: agentic capabilities across Elastic Security that adopt at your pace, keep you in command of every consequential action, and run wherever your data lives.</p></div>
+
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+</body>
+</html>

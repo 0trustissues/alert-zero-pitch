@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The analyst's day</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  h1{font-size:52px;letter-spacing:-1.8px}
+  .cards{position:absolute;left:72px;right:72px;top:186px;height:296px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;z-index:2}
+  .card{background:#fff;border:1px solid var(--line);padding:24px 24px 22px;display:flex;flex-direction:column;min-width:0}
+  .card .tag{font:600 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+  .card .bar{width:30px;height:3px;background:var(--teal);margin-top:14px}
+  .card .tx{margin-top:auto;height:190px;display:flex;flex-direction:column;justify-content:space-between}
+  .card q{display:block;quotes:none;font:italic 600 19px/1.25 var(--sans);letter-spacing:-.4px;color:var(--ink)}
+  .card p{font-size:13.5px;line-height:1.45;color:var(--char)}
+  .band{position:absolute;left:72px;right:80px;top:512px;height:120px;background:var(--blue);border:2px solid var(--ink);box-shadow:8px 8px 0 var(--ink);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));z-index:2}
+  .band div{padding:22px 36px 0}
+  .band .stat{display:block;font-size:44px;letter-spacing:-1.6px;line-height:1;color:var(--teal);white-space:nowrap}
+  .band p{margin-top:10px;font-size:15px;line-height:1.35;color:#fff}
+</style>
+</head>
+<body data-foot="Why now · The analyst's day">
+<div class="z">
+  <div class="eyebrow in1">The analyst's day</div>
+  <h1 class="in2">The SOC hits bottlenecks <span class="b">at every turn</span></h1>
+</div>
+<div class="cards">
+  <div class="card in3">
+    <div class="tag">Alert fatigue</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <q>“I can't trust my own queue.”</q>
+      <p>Thousands of alerts, mostly noise. The real attack is buried, and there aren't enough hours to tell which is which.</p>
+    </div>
+  </div>
+  <div class="card in4">
+    <div class="tag">Intel lag</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <q>“The blog dropped Tuesday. We're still building coverage.”</q>
+      <p>Someone reads the research, writes the detection, and proves it fires, all by hand, while the threat is live.</p>
+    </div>
+  </div>
+  <div class="card in5">
+    <div class="tag">Investigation toil</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <q>“Correlating this by hand takes all afternoon.”</q>
+      <p>Pivoting across endpoint, cloud, and identity to prove one campaign is slow, manual, and easy to get wrong.</p>
+    </div>
+  </div>
+  <div class="card in6">
+    <div class="tag">No trust in AI</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <q>“Why should I believe what the model wrote?”</q>
+      <p>A confident answer with no receipts is worse than none. Analysts won't act on a black box.</p>
+    </div>
+  </div>
+</div>
+<div class="band in6">
+  <div><span class="stat">Days</span><p>from research blog to deployed coverage</p></div>
+  <div><span class="stat">Thousands</span><p>of alerts a shift, mostly false positives</p></div>
+  <div><span class="stat">5+ planes</span><p>endpoint, cloud, identity, network, code</p></div>
+</div>
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Block the known. Hunt the unknown.</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  h1{font-size:54px;letter-spacing:-2px}
+  .sub{font-size:18px;margin-top:10px;max-width:1000px}
+  .cards{position:absolute;left:72px;right:80px;top:226px;bottom:84px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;z-index:2}
+  .card{padding:28px 40px 24px;display:flex;flex-direction:column;min-width:0}
+  .card.l{background:#F5F7FA;border:1px solid var(--line)}
+  .card.r{background:#fff;border:2px solid var(--blue);box-shadow:8px 8px 0 var(--blue)}
+  .tg{font:600 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+  .r .tg b{color:var(--blue);font-weight:600}
+  .r .tg span{color:var(--grey);margin-left:14px}
+  h2{margin-top:14px;font:600 34px/1.05 var(--sans);letter-spacing:-1.2px;color:var(--ink)}
+  .bar{width:46px;height:3px;background:var(--teal);margin-top:16px}
+  .lead{margin-top:18px;font-size:17px;line-height:1.4;color:var(--char)}
+  .lead b{color:var(--ink);font-weight:600}
+  ul{list-style:none;margin-top:auto}
+  li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.35;color:var(--char);margin-top:7px}
+  li::before{content:"";position:absolute;left:2px;top:7px;width:5px;height:5px;border-radius:50%;background:var(--blue)}
+  .l ul{margin-bottom:0}
+  /* entrance */
+  .card{opacity:0;animation:rise .6s cubic-bezier(.2,.9,.25,1.05) both}
+  .card.l{animation-delay:.3s} .card.r{animation-delay:.5s}
+  @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  li{opacity:0;animation:li .4s ease both}
+  @keyframes li{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:none}}
+  .bar{transform-origin:left;animation:bar .5s ease both}
+  .l .bar{animation-delay:.7s} .r .bar{animation-delay:.9s}
+  @keyframes bar{from{transform:scaleX(0)}to{transform:none}}
+</style>
+</head>
+<body data-foot="Elastic Security · The answer">
+<div class="z">
+  <div class="eyebrow in1">Elastic Security's answer</div>
+  <h1 class="in2">Block the known. <span class="b">Hunt the unknown.</span></h1>
+  <p class="sub in3">Two of the ways Elastic Security answers those bottlenecks. Today goes deep on hunting.</p>
+</div>
+
+<div class="cards">
+  <div class="card l">
+    <div class="tg">Front 1 · Prevention</div>
+    <h2>Block the known</h2>
+    <div class="bar"></div>
+    <p class="lead">Malicious behavior is denied before it runs, at machine speed, across every endpoint.</p>
+    <ul>
+      <li>Behavioral protections stop decisive actions at execution</li>
+      <li>Prevention architecture across Windows, macOS, and Linux</li>
+      <li>Containment before the attacker gets to act</li>
+    </ul>
+  </div>
+  <div class="card r">
+    <div class="tg"><b>Front 2 · Hunting</b><span>The demo</span></div>
+    <h2>Hunt the unknown</h2>
+    <div class="bar"></div>
+    <p class="lead"><b>Continuous threat hunting, powered by <span style="color:var(--pink)">AlertZero</span>,</b> turns raw research into validated detection.</p>
+    <ul>
+      <li>Reads unstructured threat research and pulls out the tradecraft</li>
+      <li>Runs the queries against your environment, grounded and validated</li>
+      <li>Correlates the evidence into campaigns, or an honest no</li>
+      <li>Proposes new detection rules for a human to review</li>
+    </ul>
+  </div>
+</div>
+
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+<script>
+document.querySelectorAll('.card').forEach((c, ci) => c.querySelectorAll('li').forEach((li, i) => { li.style.animationDelay = (.9 + ci * .2 + i * .12) + 's'; }));
+</script>
+</body>
+</html>

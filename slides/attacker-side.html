@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The attacker side</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  h1{font-size:58px;letter-spacing:-2px}
+  .cards{position:absolute;left:72px;right:72px;top:236px;bottom:84px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;z-index:2}
+  .card{background:var(--bg,#F5F7FA);border:1px solid var(--line);padding:28px 24px 24px;min-width:0;display:flex;flex-direction:column}
+  .card .tag{min-height:30px;font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+  .card .stat{font-size:38px;letter-spacing:-1.4px;line-height:1;margin-top:22px;white-space:nowrap}
+  .card .bar{width:30px;height:3px;background:var(--teal);margin-top:26px}
+  .card .tx{margin-top:auto;height:170px}
+  .card h3{font:600 18px/1.25 var(--sans);letter-spacing:-.4px;color:var(--ink)}
+  .card p{margin-top:12px;font-size:14px;line-height:1.45;color:var(--char)}
+</style>
+</head>
+<body data-foot="Why now · The attacker side">
+<div class="z">
+  <div class="eyebrow in1">The attacker side</div>
+  <h1 class="in2">Cheaper. Everywhere. <span class="b">Faster.</span></h1>
+</div>
+<div class="cards">
+  <div class="card in3">
+    <div class="tag">Economics of attack</div>
+    <div class="stat b">80%–90%</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <h3>Reduction in cost to build custom malware with AI</h3>
+      <p>What once required a skilled team now requires only a prompt</p>
+    </div>
+  </div>
+  <div class="card in4">
+    <div class="tag">Vulnerability surge</div>
+    <div class="stat b">100+ CVEs</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <h3>Per month in 2026, 6 zero-days patched in February alone</h3>
+      <p>Manual patch cycles can no longer keep pace</p>
+    </div>
+  </div>
+  <div class="card in5">
+    <div class="tag">Zero-day exploitation</div>
+    <div class="stat b">+42%</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <h3>Increase in zero-days exploited before public disclosure</h3>
+      <p>AI agents perform autonomous fuzzing and vulnerability discovery</p>
+    </div>
+  </div>
+  <div class="card in6">
+    <div class="tag">Breakout velocity</div>
+    <div class="stat b">Every 7 min</div>
+    <div class="bar"></div>
+    <div class="tx">
+      <h3>A new vulnerability is identified and published globally</h3>
+      <p>September 2026 Patch Tuesday set a new record with 966 fixes in a single release.</p>
+    </div>
+  </div>
+</div>
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+</body>
+</html>

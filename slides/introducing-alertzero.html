@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Introducing AlertZero</title>
+<link rel="stylesheet" href="style/eweb.css">
+<style>
+  body{background:radial-gradient(820px 480px at 104% 108%,rgba(240,78,152,.62),transparent 62%),radial-gradient(600px 400px at 0% 0%,rgba(4,10,40,.8),transparent 70%),#0B1D5E;color:#fff}
+  .ew-foot{color:#8FA3D6 !important}
+  .ew-foot .lg{color:#fff !important}
+  .ew-foot .lg img{content:url(assets/logo-elastic-horizontal-white.svg);height:24px}
+
+  .hero{position:absolute;left:0;right:0;top:132px;text-align:center;z-index:3}
+  h1{font-size:88px;line-height:1;letter-spacing:-3.4px;color:#fff;margin:0;white-space:nowrap}
+  h1 .w{display:inline-block;opacity:0;animation:drop .6s cubic-bezier(.2,1.4,.35,1) both}
+  h1 .az{color:var(--pink);text-shadow:0 0 38px rgba(240,78,152,.55)}
+  @keyframes drop{from{opacity:0;transform:translateY(-70px) rotate(-6deg)}to{opacity:1;transform:none}}
+  .ul{width:0;height:5px;background:var(--teal);margin:10px auto 0;animation:ul .6s cubic-bezier(.2,.8,.2,1) 1.1s forwards}
+  @keyframes ul{to{width:360px}}
+
+  .tl{position:absolute;left:0;right:0;top:296px;text-align:center;font:600 32px/1.28 var(--sans);letter-spacing:-.9px;color:#fff;z-index:3}
+  .tl span{display:block;opacity:0;animation:up .6s ease both}
+  .tl span:nth-child(1){animation-delay:1.0s} .tl span:nth-child(2){animation-delay:1.2s}
+  .tl b{color:var(--teal);font-weight:600}
+  @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  .cards{position:absolute;left:104px;top:432px;display:flex;gap:24px;z-index:3}
+  .c{position:relative;width:250px;height:196px;background:#fff;color:var(--ink);text-align:center;padding:32px 20px 0;opacity:0;animation:fall .75s cubic-bezier(.2,1.25,.4,1) both, bob 4.6s ease-in-out infinite}
+  .c:nth-child(1){--s:var(--teal);animation-delay:.7s,2s} .c:nth-child(2){--s:var(--pink);animation-delay:.82s,2.5s}
+  .c:nth-child(3){--s:var(--yellow);animation-delay:.94s,3s} .c:nth-child(4){--s:var(--orange);animation-delay:1.06s,3.5s}
+  .c{box-shadow:7px 7px 0 var(--s)}
+  .c h3{font:600 25px/1.12 var(--sans);letter-spacing:-.8px;color:var(--blue)}
+  .c p{margin-top:12px;font-size:17px;line-height:1.3;color:var(--char)}
+  @keyframes fall{from{opacity:0;transform:translateY(-120px) rotate(-3deg)}to{opacity:1;transform:none}}
+  @keyframes bob{0%,100%{translate:0 0}50%{translate:0 -6px}}
+  /* a status light on each watch, one pinging at a time */
+  .c i{position:absolute;right:14px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--teal-d)}
+  .c i::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:2px solid var(--teal-d);opacity:0;animation:ping 6s ease-out infinite}
+  .c:nth-child(1) i::after{animation-delay:2.2s} .c:nth-child(2) i::after{animation-delay:3.7s}
+  .c:nth-child(3) i::after{animation-delay:5.2s} .c:nth-child(4) i::after{animation-delay:6.7s}
+  @keyframes ping{0%{opacity:.9;transform:scale(1)}20%{opacity:0;transform:scale(3.4)}100%{opacity:0}}
+
+  /* NEW ribbon */
+  .rb{position:absolute;right:-128px;top:44px;width:470px;height:60px;transform:rotate(45deg);z-index:5;background:#fff;border-top:7px solid #0A1236;border-bottom:7px solid #0A1236;display:flex;align-items:center;justify-content:center;font:700 30px var(--sans);letter-spacing:.06em;color:var(--ink);overflow:hidden;animation:rib .7s cubic-bezier(.2,.9,.25,1.05) .2s both}
+  .rb::after{content:"";position:absolute;top:0;bottom:0;width:90px;left:-120px;background:linear-gradient(90deg,transparent,rgba(240,78,152,.35),transparent);animation:shine 5s ease-in-out 2.4s infinite}
+  @keyframes rib{from{opacity:0;transform:translate(120px,-120px) rotate(45deg)}to{opacity:1;transform:rotate(45deg)}}
+  @keyframes shine{0%,55%{left:-120px}85%,100%{left:100%}}
+</style>
+</head>
+<body data-foot="Elastic Security · AlertZero">
+<div class="rb">NEW</div>
+
+<div class="hero">
+  <h1 id="t"></h1>
+  <div class="ul"></div>
+</div>
+<div class="tl">
+  <span>The agentic layer of Elastic Security.</span>
+  <span>Every alert, every rule, every hunt. <b>A human on the loop.</b></span>
+</div>
+
+<div class="cards">
+  <div class="c"><i></i><h3>Triage Watch</h3><p>Every alert, before you see it</p></div>
+  <div class="c"><i></i><h3>Detection Watch</h3><p>Fix the rule, not the symptom</p></div>
+  <div class="c"><i></i><h3>Hunt Watch</h3><p>Hunting that never sleeps</p></div>
+  <div class="c"><i></i><h3>Forensics Watch</h3><p>Deep research on threats and exploits</p></div>
+</div>
+
+<script src="style/eweb.js"></script>
+<script src="/js/fuckslides.js"></script>
+<script>
+(function(){
+  EW.dots({x: 0, y: 0, w: 1280, h: 720, gap: 11, r: 1, color: [36, 62, 138], hi: [240, 78, 152], seed: 9, blobs: 9, thr: .5});
+  // the name lands letter by letter
+  const t = document.getElementById('t');
+  let i = 0;
+  const put = (txt, cls) => [...txt].forEach(ch => {
+    const s = document.createElement('span'); s.className = 'w ' + (cls || ''); s.textContent = ch === ' ' ? ' ' : ch;
+    s.style.animationDelay = (.25 + i * .045).toFixed(3) + 's'; i++; t.appendChild(s); });
+  put('Introducing ');
+  put('AlertZero', 'az');
+})();
+</script>
+</body>
+</html>
