@@ -20,6 +20,7 @@ module.exports = {
     'introducing-alertzero.html',
     'alertzero-architecture.html',
     'what-is-a-watch.html',
+    'watch-flow.html',
     'three-levels.html',
     'demo-running.html',
     'key-takeaways.html',
@@ -39,6 +40,7 @@ module.exports = {
     'Introducing AlertZero',
     'AlertZero architecture',
     'What is a Watch',
+    'Watches working together',
     'Three levels',
     'AlertZero, running',
     'Key takeaways',
@@ -51,5 +53,8 @@ module.exports = {
   //     extra: `document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));`
   //   }
   // },
-  disabled: [],
+  disabled: [
+    'block-hunt.html',
+    'key-takeaways.html',
+  ],
 };
